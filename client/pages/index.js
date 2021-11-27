@@ -9,7 +9,7 @@ export default function Home() {
   const [data, setData] = useState(null)
 
   const fetchData = async () => {
-    axios.get('/showTea').then(res => {
+    axios.get('http://localhost:5000/showTea').then(res => {
       console.log(res.data)
       setData(res.data.message)
     }).catch(err => {console.log(err)})
