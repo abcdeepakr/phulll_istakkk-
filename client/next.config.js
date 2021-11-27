@@ -1,6 +1,11 @@
 module.exports = {
   reactStrictMode: true,
-    // proxy: {
-    //   '': 'http://localhost:5000',
-    // }
+  async rewrites() {
+    return [
+      {
+        source: '/:path*',
+        destination: 'http://localhost:5000/:path*' // Proxy to Backend
+      }
+    ]
+  }
 }
